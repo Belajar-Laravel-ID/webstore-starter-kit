@@ -19,7 +19,7 @@ Pastikan Anda sudah menginstal **PHP, Composer, dan Node.js** di sistem Anda.
 
 1. Install Menggunakan Laravel Installer
     ```sh
-    laravel new webstore --using=erkurn/belajar-laravel-webstore-ui
+    laravel new webstore --using=belajar-laravel-id/webstore-starter-kit
     ```
 
 ## 📌 Penggunaan Preline UI
