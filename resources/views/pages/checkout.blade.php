@@ -46,7 +46,7 @@
                             Message</p>
                         <div>
                             <div x-data="{ open: false }" class="relative w-full">
-                                <input type="text" wire:model.live.debounce.500ms="locationSearch"
+                                <input type="text"
                                     @focus="open = true" @click.outside="open = false"
                                     class="py-1.5 sm:py-2 px-3 pe-11 block w-full border-gray-200 shadow-2xs sm:text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                     placeholder="Cari Lokasi">
