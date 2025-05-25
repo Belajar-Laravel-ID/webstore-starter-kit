@@ -1,5 +1,5 @@
 @component('mail::message')
-# Pesanan Anda Telah Dikirim, {{ $sales_order->full_name }} 🚚
+# Pesanan Anda Telah Dikirim, {{ $sales_order->customer->full_name }} 🚚
 
 Pesanan Anda dengan nomor **#{{ $sales_order->trx_id }}** telah dikirim dan sedang dalam perjalanan ke alamat tujuan.
 
@@ -7,11 +7,11 @@ Pesanan Anda dengan nomor **#{{ $sales_order->trx_id }}** telah dikirim dan seda
 
 ## 📦 Informasi Pengiriman
 
-- **Nomor Resi:** {{ $sales_order->shipping_receipt_number ?? 'Belum tersedia' }}
-- **Kurir:** {{ $sales_order->shipping_courier }}
-- **Layanan:** {{ $sales_order->shipping_service }}
-- **Estimasi Tiba:** {{ $sales_order->shipping_estimated_delivery }}
-- **Berat Paket:** {{ $sales_order->shipping_weight }} gram
+- **Nomor Resi:** {{ $sales_order->shipping->receipt_number ?? 'Belum tersedia' }}
+- **Kurir:** {{ $sales_order->shipping->courier }}
+- **Layanan:** {{ $sales_order->shipping->service }}
+- **Estimasi Tiba:** {{ $sales_order->shipping->estimated_delivery }}
+- **Berat Paket:** {{ $sales_order->shipping->weight }} gram
 - **Biaya Pengiriman:** {{ $sales_order->shipping_total_formatted }}
 
 ---
@@ -19,7 +19,7 @@ Pesanan Anda dengan nomor **#{{ $sales_order->trx_id }}** telah dikirim dan seda
 ## 📍 Alamat Pengiriman
 
 {{ $sales_order->address_line }}  
-{{ $sales_order->destination_city }}, {{ $sales_order->destination_province }}, {{ $sales_order->destination_postal_code }}
+{{ $sales_order->destination->city }}, {{ $sales_order->destination->province }}, {{ $sales_order->destination->postal_code }}
 
 **Tanggal Pemesanan:**  
 {{ $sales_order->created_at_formatted }}

@@ -1,5 +1,5 @@
 @component('mail::message')
-# Terima Kasih, {{ $sales_order->full_name }} 🎉
+# Terima Kasih, {{ $sales_order->customer->full_name }} 🎉
 
 Pesanan Anda dengan nomor **#{{ $sales_order->trx_id }}** telah berhasil dibuat.
 
@@ -9,7 +9,7 @@ Pesanan Anda dengan nomor **#{{ $sales_order->trx_id }}** telah berhasil dibuat.
 
 **Alamat Pengiriman:**  
 {{ $sales_order->address_line }}  
-{{ $sales_order->destination_city }}, {{ $sales_order->destination_province }}, {{ $sales_order->destination_postal_code }}
+{{ $sales_order->destination->city }}, {{ $sales_order->destination->province }}, {{ $sales_order->destination->postal_code }}
 
 **Tanggal Pemesanan:**  
 {{ $sales_order->created_at_formatted }}
